@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Forum</title>
+    <title>Panda's Rails Forum</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="header main_header clearfix">
+      <div class="wrapper">
+        <div id="logo">
+          <p>Panda's Rails Forum</p>
+        </div>
+        <div id="buttons">
+          <%= link_to "New post", new_post_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>
